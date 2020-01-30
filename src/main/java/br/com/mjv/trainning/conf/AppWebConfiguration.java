@@ -68,19 +68,19 @@ public class AppWebConfiguration extends WebMvcConfigurerAdapter {
 	}
 
 	
-	@Bean
-	public ViewResolver contentNegotiationViewResolver(ContentNegotiationManager manager) {
-
-	    List<ViewResolver> viewResolvers = new ArrayList<>();
-	    viewResolvers.add(internalResourceViewResolver());
-	    viewResolvers.add(new JsonViewResolver());
-
-	    ContentNegotiatingViewResolver resolver = 
-	        new ContentNegotiatingViewResolver();
-	    resolver.setViewResolvers(viewResolvers);
-	    resolver.setContentNegotiationManager(manager);
-
-	    return resolver;
-	}
+//	@Bean
+//	public ViewResolver contentNegotiationViewResolver(ContentNegotiationManager manager) {
+//
+//	    List<ViewResolver> viewResolvers = new ArrayList<>();
+//	    viewResolvers.add(internalResourceViewResolver());
+//	    viewResolvers.add(new JsonViewResolver());
+//
+//	    ContentNegotiatingViewResolver resolver = 
+//	        new ContentNegotiatingViewResolver();
+//	    resolver.setViewResolvers(viewResolvers);
+//	    resolver.setContentNegotiationManager(manager);
+//
+//	    return resolver;
+//	}
 	
 }
