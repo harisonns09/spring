@@ -2,11 +2,8 @@ package br.com.mjv.trainning.conf;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.concurrent.TimeUnit;
 
-import org.springframework.cache.CacheManager;
 import org.springframework.cache.annotation.EnableCaching;
-import org.springframework.cache.guava.GuavaCacheManager;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.format.datetime.DateFormatter;
@@ -25,10 +22,13 @@ import org.springframework.web.servlet.view.ContentNegotiatingViewResolver;
 import org.springframework.web.servlet.view.InternalResourceViewResolver;
 import org.springframework.web.servlet.view.JstlView;
 
+import br.com.mjv.trainning.controllers.LivroController;
+import br.com.mjv.trainning.dao.livro.LivroDAO;
+
 
 
 @EnableWebMvc
-@ComponentScan(basePackageClasses = { HomeController.class, ProdutoDAO.class, FileSaver.class, CarrinhoCompras.class })
+@ComponentScan(basePackageClasses = { LivroController.class, LivroDAO.class, })
 @EnableCaching
 public class AppWebConfiguration extends WebMvcConfigurerAdapter {
 
@@ -67,15 +67,6 @@ public class AppWebConfiguration extends WebMvcConfigurerAdapter {
 		configurer.enable();
 	}
 
-	@Bean
-	public CacheManager cacheManager() {
-		CacheBuilder<Object, Object> builder = CacheBuilder.newBuilder().maximumSize(100).expireAfterAccess(5,
-				TimeUnit.SECONDS);
-		GuavaCacheManager manager = new GuavaCacheManager();
-		manager.setCacheBuilder(builder);
-		return manager;
-
-	}
 	
 	@Bean
 	public ViewResolver contentNegotiationViewResolver(ContentNegotiationManager manager) {
