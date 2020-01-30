@@ -71,7 +71,11 @@ public class AppWebConfiguration extends WebMvcConfigurerAdapter {
 //	@Bean
 //	public ViewResolver contentNegotiationViewResolver(ContentNegotiationManager manager) {
 //
+
 //	    List<ViewResolver> viewResolvers = new ArrayList<>();
+
+
+
 //	    viewResolvers.add(internalResourceViewResolver());
 //	    viewResolvers.add(new JsonViewResolver());
 //
