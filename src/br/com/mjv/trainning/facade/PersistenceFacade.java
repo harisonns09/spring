@@ -4,8 +4,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Scope;
 import org.springframework.stereotype.Component;
 
-
-import br.com.mjv.trainning.dao.livro.LivroDAO;
+import br.com.mjv.trainning.daos.LivroDAO;
 
 /**
  * Facade com as operações de persistência.

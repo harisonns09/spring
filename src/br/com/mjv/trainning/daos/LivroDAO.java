@@ -1,4 +1,4 @@
-package br.com.mjv.trainning.dao.livro;
+package br.com.mjv.trainning.daos;
 
 import java.util.List;
 

@@ -1,6 +1,5 @@
 package br.com.mjv.trainning.conf;
 
-import org.springframework.cache.annotation.EnableCaching;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.format.datetime.DateFormatter;
@@ -13,16 +12,14 @@ import org.springframework.web.servlet.config.annotation.DefaultServletHandlerCo
 import org.springframework.web.servlet.config.annotation.EnableWebMvc;
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurerAdapter;
 import org.springframework.web.servlet.view.InternalResourceViewResolver;
-import org.springframework.web.servlet.view.JstlView;
 
 import br.com.mjv.trainning.controllers.LivroController;
-import br.com.mjv.trainning.dao.livro.LivroDAO;
+import br.com.mjv.trainning.daos.LivroDAO;
 
 
 
 @EnableWebMvc
 @ComponentScan(basePackageClasses = { LivroController.class, LivroDAO.class, })
-@EnableCaching
 public class AppWebConfiguration extends WebMvcConfigurerAdapter {
 
 	@Bean
@@ -30,7 +27,7 @@ public class AppWebConfiguration extends WebMvcConfigurerAdapter {
 		InternalResourceViewResolver resolver = new InternalResourceViewResolver();
 		resolver.setPrefix("/WEB-INF/views/");
 		resolver.setSuffix(".jsp");
-		resolver.setViewClass(JstlView.class);
+		//resolver.setViewClass(JstlView.class);
 
 		return resolver;
 	}

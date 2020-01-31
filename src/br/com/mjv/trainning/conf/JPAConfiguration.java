@@ -35,7 +35,7 @@ public class JPAConfiguration {
 		properties.setProperty("hibernate.hbm2ddl.auto", "update");
 		
 		factoryBean.setJpaProperties(properties);
-		factoryBean.setPackagesToScan("br.com.casadocodigo.loja.models");
+		factoryBean.setPackagesToScan("br.com.mjv.trainning.models");
 		
 		return factoryBean;
 	}
